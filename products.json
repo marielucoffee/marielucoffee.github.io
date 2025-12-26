@@ -1,0 +1,50 @@
+{
+  "settings": {
+    "brand": "Marielú Coffee Shop",
+    "headline": "Il caffè giusto per la tua macchina.",
+    "subhead": "Capsule compatibili, cialde ESE 44, grani e box degustazione. Ordina su WhatsApp o ritira in negozio.",
+    "whatsapp_phone": "39XXXXXXXXXX",
+    "whatsapp_label": "+39 XXX XXX XXXX",
+    "whatsapp_default_message": "Ciao! Vorrei informazioni e consigli sul caffè giusto per la mia macchina.",
+    "address": "Brescia (BS) — Inserisci via e numero",
+    "hours": "Lun-Sab 9:00–19:30 (modifica qui)",
+    "maps_link": "https://maps.google.com/?q=Marielu+Coffee+Shop",
+    "instagram": "https://instagram.com/tuoaccount",
+    "facebook": "https://facebook.com/tuopagina",
+    "tiktok": "https://tiktok.com/@tuoaccount"
+  },
+  "products": [
+    {
+      "name": "Box Degustazione — Intensità Mix",
+      "format": "Box Degustazione",
+      "price": 19.90,
+      "compatibility": ["Nespresso", "ESE 44"],
+      "notes": "Un assaggio guidato per capire cosa ti piace davvero.",
+      "image": "https://via.placeholder.com/900x600?text=Box+Degustazione"
+    },
+    {
+      "name": "Capsule Intenso 10pz",
+      "format": "Capsule",
+      "price": 3.90,
+      "compatibility": ["Nespresso"],
+      "notes": "Tostatura scura, crema densa, gusto deciso.",
+      "image": "https://via.placeholder.com/900x600?text=Capsule+Intenso"
+    },
+    {
+      "name": "Cialde Classico 18pz",
+      "format": "Cialde ESE 44",
+      "price": 6.50,
+      "compatibility": ["ESE 44"],
+      "notes": "Equilibrato, aromatico, perfetto tutti i giorni.",
+      "image": "https://via.placeholder.com/900x600?text=Cialde+ESE"
+    },
+    {
+      "name": "Grani Espresso 1kg",
+      "format": "Grani",
+      "price": 22.00,
+      "compatibility": ["Macinacaffè"],
+      "notes": "Miscela espresso, ottima resa in macchina.",
+      "image": "https://via.placeholder.com/900x600?text=Grani+1kg"
+    }
+  ]
+}
