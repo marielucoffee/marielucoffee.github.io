@@ -1,0 +1,470 @@
+/*
+ * Stile principale per il sito Marielu Coffee Shop.
+ * La palette di colori si ispira al logo rosso del negozio abbinata
+ * a tonalità neutre per mettere in risalto i contenuti. Il layout è
+ * completamente responsivo: le sezioni si adattano su dispositivi
+ * mobili disponendosi verticalmente e ridimensionando i caratteri
+ * quando necessario. Le classi sono raggruppate per tipologia
+ * (barra in alto, header, hero, sezioni, carte prodotto, footer) per
+ * una migliore manutenzione del codice.
+ */
+
+/* Reset di base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+/* Barra superiore con messaggi promozionali */
+.top-bar {
+  background-color: #f7f7f7;
+  color: #666;
+  font-size: 0.85rem;
+  padding: 8px 20px;
+  text-align: center;
+}
+
+/* Header principale */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e31f24;
+}
+
+/* Sezione hero con immagine di sfondo */
+.hero {
+  position: relative;
+  /* L'immagine di sfondo dell'hero è una illustrazione astratta di chicchi
+   * di caffè generata dall'IA. Il file hero.png si trova nella cartella
+   * images e sostituisce la precedente foto non valida. */
+  background-image: url('images/hero.png');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+/* Bottoni generici */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background-color: #e31f24;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #c81a1e;
+}
+
+/* Sezione categorie */
+.categories {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.category {
+  width: 280px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category:hover {
+  transform: translateY(-5px);
+}
+
+.category img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.category h3 {
+  margin: 15px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.category a {
+  margin-bottom: 20px;
+}
+
+/* Sezione About */
+.about {
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-img {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Sezione prodotti */
+.products {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.product-card {
+  width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card .info {
+  padding: 15px;
+}
+
+.product-card h4 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.product-card p {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.product-card .price {
+  font-weight: 600;
+  color: #e31f24;
+  margin-bottom: 10px;
+}
+
+.product-card .btn {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Sezione call to action */
+.cta {
+  padding: 60px 20px;
+  background-color: #e31f24;
+  color: #fff;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #fdfdfd;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #ddd;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul a:hover {
+  color: #fff;
+}
+
+/* Mantiene lo stile del testo nei paragrafi del footer anche per i link (telefono, mappa) */
+.footer-col p a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #ddd;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #e31f24;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Contact page specific styles */
+.contact-container {
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-details h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #e31f24;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #c81a1e;
+}
+
+/* Media queries per dispositivi mobili */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero {
+    height: 50vh;
+  }
+  .category {
+    width: 80%;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .product-card {
+    width: 80%;
+  }
+  .footer-container {
+    flex-direction: column;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
