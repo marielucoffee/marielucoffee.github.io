@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marielú Coffee Shop — Capsule, Cialde, Grani</title>
+  <meta name="description" content="Capsule, cialde ESE, grani e box degustazione. Ordina su WhatsApp o ritira in negozio." />
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    body { margin:0; background:#0b0b0c; color:#f4f4f5; }
+    a { color: inherit; }
+    .wrap { max-width:1100px; margin:0 auto; padding:24px; }
+    .hero { padding:48px 0 24px; display:grid; gap:18px; }
+    .kicker { opacity:.8; font-size:14px; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:0; font-size:42px; line-height:1.1; }
+    .sub { font-size:18px; opacity:.9; max-width:780px; }
+    .ctaRow { display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; }
+    .btn { padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.15); text-decoration:none; display:inline-flex; gap:10px; align-items:center; }
+    .btn.primary { background:#f3c969; color:#111; border-color:transparent; font-weight:700; }
+    .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+    .card { grid-column:span 3; background:#121215; border:1px solid rgba(255,255,255,.10); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; }
+    .card img { width:100%; height:170px; object-fit:cover; background:#1a1a1f; }
+    .card .p { padding:14px; display:flex; flex-direction:column; gap:8px; }
+    .tag { font-size:12px; opacity:.8; }
+    .price { font-size:18px; font-weight:800; }
+    .muted { opacity:.8; }
+    .row { display:flex; justify-content:space-between; gap:10px; align-items:center; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; }
+    .chip { padding:8px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:#101015; cursor:pointer; font-size:13px; }
+    .chip.active { background:#f3c969; color:#111; border-color:transparent; font-weight:700; }
+    .sectionTitle { margin:28px 0 10px; font-size:22px; }
+    footer { padding:24px 0 40px; opacity:.85; font-size:14px; }
+    @media (max-width: 980px){ .card{grid-column:span 6;} h1{font-size:36px;} }
+    @media (max-width: 520px){ .card{grid-column:span 12;} h1{font-size:32px;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="kicker" id="brandKicker">MARIELÚ COFFEE SHOP</div>
+      <h1 id="headline">Il caffè giusto per la tua macchina.</h1>
+      <div class="sub" id="subhead">
+        Capsule compatibili, cialde ESE 44, grani e box degustazione. Ordina su WhatsApp o ritira in negozio.
+      </div>
+      <div class="ctaRow">
+        <a class="btn primary" id="ctaWhats" href="#" target="_blank" rel="noopener">Ordina su WhatsApp</a>
+        <a class="btn" href="#shop">Vedi prodotti</a>
+        <a class="btn" href="#contatti">Contatti & Mappa</a>
+      </div>
+    </header>
+
+    <section>
+      <div class="sectionTitle">Scegli per formato</div>
+      <div class="chips" id="filters"></div>
+    </section>
+
+    <section id="shop">
+      <div class="sectionTitle">Prodotti</div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <section id="contatti">
+      <div class="sectionTitle">Contatti</div>
+      <div class="muted" id="contactBlock"></div>
+    </section>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> <span id="brandFooter">Marielú Coffee Shop</span> — Tutti i diritti riservati.</div>
+    </footer>
+  </div>
+
+  <script>
+    const state = { products: [], filter: "Tutti", settings: null };
+
+    function money(v){ return new Intl.NumberFormat('it-IT', {style:'currency', currency:'EUR'}).format(v); }
+
+    function waLink(settings, product){
+      const phone = settings.whatsapp_phone; // es: 39XXXXXXXXXX (senza +)
+      const msg = encodeURIComponent(
+        `Ciao! Vorrei ordinare: ${product.name} — ${product.format} — ${money(product.price)}. ` +
+        `Quantità: 1.`
+      );
+      return `https://wa.me/${phone}?text=${msg}`;
+    }
+
+    function renderFilters(){
+      const formats = ["Tutti", ...new Set(state.products.map(p => p.format))];
+      const el = document.getElementById("filters");
+      el.innerHTML = "";
+      formats.forEach(f => {
+        const b = document.createElement("button");
+        b.className = "chip" + (state.filter===f ? " active" : "");
+        b.textContent = f;
+        b.onclick = () => { state.filter=f; renderFilters(); renderProducts(); };
+        el.appendChild(b);
+      });
+    }
+
+    function renderProducts(){
+      const grid = document.getElementById("productGrid");
+      grid.innerHTML = "";
+      const list = state.filter==="Tutti" ? state.products : state.products.filter(p => p.format===state.filter);
+
+      list.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${p.image || ''}" alt="">
+          <div class="p">
+            <div class="tag">${p.format} • ${p.compatibility.join(", ")}</div>
+            <div style="font-size:16px;font-weight:800;">${p.name}</div>
+            <div class="muted">${p.notes || ""}</div>
+            <div class="row">
+              <div class="price">${money(p.price)}</div>
+              <a class="btn primary" style="padding:10px 12px;border-radius:12px;" href="${waLink(state.settings,p)}" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function applySettings(){
+      const s = state.settings;
+      document.getElementById("brandKicker").textContent = s.brand.toUpperCase();
+      document.getElementById("brandFooter").textContent = s.brand;
+      document.getElementById("headline").textContent = s.headline;
+      document.getElementById("subhead").textContent = s.subhead;
+      document.getElementById("ctaWhats").href = `https://wa.me/${s.whatsapp_phone}?text=${encodeURIComponent(s.whatsapp_default_message)}`;
+      document.getElementById("contactBlock").innerHTML = `
+        <div><b>WhatsApp:</b> <a href="https://wa.me/${s.whatsapp_phone}" target="_blank" rel="noopener">${s.whatsapp_label}</a></div>
+        <div><b>Indirizzo:</b> ${s.address}</div>
+        <div><b>Orari:</b> ${s.hours}</div>
+        <div style="margin-top:10px;">
+          <a class="btn" href="${s.maps_link}" target="_blank" rel="noopener">Apri su Google Maps</a>
+          <a class="btn" href="${s.instagram}" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="${s.facebook}" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn" href="${s.tiktok}" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      `;
+      document.getElementById("year").textContent = new Date().getFullYear();
+    }
+
+    async function init(){
+      const res = await fetch("./products.json");
+      const data = await res.json();
+      state.settings = data.settings;
+      state.products = data.products;
+      applySettings();
+      renderFilters();
+      renderProducts();
+    }
+    init();
+  </script>
+</body>
+</html>
