@@ -1,6 +1,6 @@
 /* cart.js - Carrello locale + invio ordine su WhatsApp (no pagamenti) */
 
-const WA_PHONE = "39INSERISCI_NUMERO"; // es: 393331234567 (senza + e senza spazi)
+const WA_PHONE = "+393791395387"; // es: 393331234567 (senza + e senza spazi)
 const STORAGE_KEY = "marielu_cart_v1";
 
 function loadCart() {
