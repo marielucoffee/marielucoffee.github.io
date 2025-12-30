@@ -3,72 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contatti - Marielu Coffee Shop</title>
+    <title>Contatti – Marielu Coffee Shop</title>
+
     <link rel="stylesheet" href="style.css" />
-    <!-- Google Fonts -->
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font Awesome Icons -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
+
   <body>
-    <!-- Barra promozionale -->
     <div class="top-bar">
       Spedizione gratuita per ordini superiori a 50&nbsp;€
     </div>
 
-    <!-- Header -->
     <header>
       <div class="logo">
         <a href="index.html">
           <img src="logo.jpg" alt="Marielu Coffee Shop" />
         </a>
       </div>
+
       <nav>
         <ul>
-         <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="capsule.html">Capsule</a></li>
           <li><a href="cialde.html">Cialde</a></li>
           <li><a href="grani.html">Grani</a></li>
           <li><a href="accessori.html">Accessori</a></li>
           <li><a href="macchine.html">Macchine</a></li>
-          <li><a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a></li>
+          <li>
+            <a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a>
+          </li>
           <li><a href="contact.html" aria-current="page">Contatti</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Hero della pagina contatti -->
-    <section class="hero" style="height: 35vh; background-image: url('images/coffee_cup.jpg');">
+    <section
+      class="hero"
+      style="height: 35vh; background-image: url('images/coffee_cup.jpg');"
+    >
       <div class="hero-content">
         <h1>Contattaci</h1>
         <p>Siamo a tua disposizione per ogni richiesta.</p>
       </div>
     </section>
 
-    <!-- Contenuto pagina contatti -->
     <section class="contact-container">
       <div class="contact-details">
         <h2>Come possiamo aiutarti?</h2>
+
         <p>
-          Se hai domande sui nostri prodotti, ordini o servizi, non esitare a
-          contattarci tramite telefono, social o compilando il modulo.
+          Per informazioni su prodotti, ordini o disponibilità puoi contattarci
+          direttamente. Rispondiamo velocemente su WhatsApp.
         </p>
-        <p><strong>Indirizzo:</strong><br />Via Cesare Battisti, 38<br />25016 Ghedi (BS)</p>
-        <p><strong>Telefono:</strong> <a href="tel:+390305409159">030&nbsp;540&nbsp;9159</a></p>
+
         <p>
-          <strong>Orari:</strong><br />Lunedì–Venerdì: 9:00–12:30 / 15:00–19:00<br />Sabato: 9:00–12:30<br />Domenica: chiuso
+          <strong>Indirizzo:</strong><br />
+          Via Cesare Battisti, 38<br />
+          25016 Ghedi (BS)
         </p>
+
+        <p>
+          <strong>Telefono fisso:</strong><br />
+          <a href="tel:+390305409159">030 540 9159</a>
+        </p>
+
+        <p>
+          <strong>Cellulare / WhatsApp:</strong><br />
+          <a href="https://wa.me/393791395387" target="_blank">
+            +39 379 139 5387
+          </a>
+        </p>
+
+        <p>
+          <strong>Orari:</strong><br />
+          Lunedì–Venerdì: 9:00–12:30 / 15:00–19:00<br />
+          Sabato: 9:00–12:30<br />
+          Domenica: chiuso
+        </p>
+
         <p>
           <strong>Social:</strong><br />
-          <a href="https://www.facebook.com/profile.php?id=100092344270720" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a><br />
-          <a href="https://www.instagram.com/marielucoffeeshop/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100092344270720"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i> Facebook</a
+          ><br />
+          <a
+            href="https://www.instagram.com/marielucoffeeshop/"
+            target="_blank"
+            ><i class="fab fa-instagram"></i> Instagram</a
+          >
         </p>
+
         <p>
           <a
             href="https://www.google.com/maps/search/?api=1&query=Via+Cesare+Battisti+38+25016+Ghedi+BS"
@@ -78,18 +113,42 @@
           >
         </p>
       </div>
+
+      <!-- WhatsApp form -->
       <div class="contact-form">
-        <h2>Scrivici un messaggio</h2>
-        <form action="#" method="post" onsubmit="alert('Grazie per il tuo messaggio!'); return false;">
-          <input type="text" name="name" placeholder="Il tuo nome" required />
-          <input type="email" name="email" placeholder="La tua email" required />
-          <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
-          <button type="submit">Invia</button>
+        <h2>Scrivici su WhatsApp</h2>
+
+        <p style="margin-bottom: 15px; color: #555;">
+          Compila i campi e verrai reindirizzato su WhatsApp con il messaggio già pronto.
+        </p>
+
+        <form
+          onsubmit="
+            const name = this.name.value;
+            const msg = this.message.value;
+            const text = encodeURIComponent(
+              'Ciao, sono ' + name + '. ' + msg
+            );
+            window.open('https://wa.me/393791395387?text=' + text, '_blank');
+            return false;
+          "
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Il tuo nome"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Scrivi il tuo messaggio"
+            required
+          ></textarea>
+          <button type="submit">Invia su WhatsApp</button>
         </form>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-container">
         <div class="footer-col">
@@ -97,37 +156,22 @@
           <p>
             Marielu Coffee Shop<br />
             Via Cesare Battisti, 38<br />
-            25016 Ghedi (BS) – Italia
+            25016 Ghedi (BS)
           </p>
-          <p>Telefono: <a href="tel:+390305409159">030&nbsp;540&nbsp;9159</a></p>
-          <p>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Via+Cesare+Battisti+38+25016+Ghedi+BS"
-              target="_blank"
-              >Come arrivare</a
-            >
-          </p>
+          <p>Tel: <a href="tel:+390305409159">030 540 9159</a></p>
         </div>
+
         <div class="footer-col">
           <h3>Categorie</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html#capsule">Capsule</a></li>
-            <li><a href="shop.html#cialde">Cialde</a></li>
-            <li><a href="shop.html#accessori">Accessori</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contatti</a></li>
+            <li><a href="capsule.html">Capsule</a></li>
+            <li><a href="cialde.html">Cialde</a></li>
+            <li><a href="grani.html">Grani</a></li>
+            <li><a href="macchine.html">Macchine</a></li>
+            <li><a href="accessori.html">Accessori</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h3>Informazioni</h3>
-          <ul>
-            <li><a href="#">Spedizione &amp; Resi</a></li>
-            <li><a href="#">Termini e Condizioni</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
+
         <div class="footer-col">
           <h3>Seguici</h3>
           <div class="social-icons">
@@ -144,9 +188,12 @@
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        © 2025 Marielu Coffee Shop - Tutti i diritti riservati.
+        © 2025 Marielu Coffee Shop – Tutti i diritti riservati.
       </div>
     </footer>
+
+    <script src="cart.js"></script>
   </body>
 </html>
