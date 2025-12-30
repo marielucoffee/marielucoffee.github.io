@@ -17,7 +17,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <script src="cart.js"></script>
 
   <body>
     <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
@@ -28,22 +27,25 @@
           <img src="logo.jpg" alt="Marielu Coffee Shop" />
         </a>
       </div>
+
       <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+        <ul>
+          <li><a href="index.html">Home</a></li>
           <li><a href="capsule.html">Capsule</a></li>
           <li><a href="cialde.html">Cialde</a></li>
           <li><a href="grani.html">Grani</a></li>
           <li><a href="accessori.html" aria-current="page">Accessori</a></li>
           <li><a href="macchine.html">Macchine</a></li>
-           <li><a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a></li>
+          <li>
+            <a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a>
+          </li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="contact.html">Contatti</a></li>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
     </header>
 
-    <section class="hero small-hero">
+    <section class="hero">
       <div class="hero-content">
         <h1>Accessori</h1>
         <p>
@@ -58,16 +60,19 @@
 
       <div class="product-grid">
         <div class="product-card">
-          <img src="images/accessori.jpg" alt="Accessori per il caffè" />
+          <img src="images/accessori.jpg" alt="Porta capsule e organizer" />
           <div class="info">
             <h4>Porta Capsule / Organizer</h4>
             <p>Soluzioni pratiche per tenere le capsule sempre in ordine.</p>
             <div class="price">Chiedi disponibilità</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20avete%20porta%20capsule%20o%20organizer%20disponibili?"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Porta Capsule / Organizer"
+              data-price="Chiedi disponibilità"
+              >Aggiungi</a
             >
           </div>
         </div>
@@ -78,11 +83,14 @@
             <h4>Tazze &amp; Bicchierini</h4>
             <p>Tazze da espresso e bicchierini pratici per ogni occasione.</p>
             <div class="price">Chiedi disponibilità</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20su%20tazze%20e%20bicchierini%20da%20caff%C3%A8"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Tazze e Bicchierini"
+              data-price="Chiedi disponibilità"
+              >Aggiungi</a
             >
           </div>
         </div>
@@ -93,11 +101,14 @@
             <h4>Zucchero, Palette, Varie</h4>
             <p>Piccoli accessori che fanno la differenza nel tuo rituale.</p>
             <div class="price">Chiedi disponibilità</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20avete%20zucchero%20e%20palette%20per%20il%20caff%C3%A8?"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Zucchero, Palette e Accessori Vari"
+              data-price="Chiedi disponibilità"
+              >Aggiungi</a
             >
           </div>
         </div>
@@ -106,10 +117,8 @@
 
     <section class="cta">
       <h2>Vuoi un accessorio specifico?</h2>
-      <p>
-        Scrivici cosa ti serve: ti rispondiamo con disponibilità e prezzo.
-      </p>
-      <a href="https://wa.me/393000000000" target="_blank" class="btn"
+      <p>Scrivici cosa ti serve: ti rispondiamo con disponibilità e prezzo.</p>
+      <a href="https://wa.me/393791395387" target="_blank" class="btn"
         >Contattaci su WhatsApp</a
       >
     </section>
@@ -132,6 +141,7 @@
             <li><a href="capsule.html">Capsule</a></li>
             <li><a href="cialde.html">Cialde</a></li>
             <li><a href="grani.html">Grani</a></li>
+            <li><a href="macchine.html">Macchine</a></li>
             <li><a href="accessori.html">Accessori</a></li>
           </ul>
         </div>
@@ -157,12 +167,8 @@
         © 2025 Marielu Coffee Shop – Tutti i diritti riservati.
       </div>
     </footer>
+
+    <!-- Script (posizione corretta) -->
+    <script src="cart.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
