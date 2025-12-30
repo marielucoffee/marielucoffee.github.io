@@ -1,4 +1,4 @@
-  qwssw\1qqa<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
@@ -19,13 +19,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <script src="cart.js"></script>
 
   <body>
     <!-- Barra promozionale -->
-    <div class="top-bar">
-      Spedizione gratuita per ordini superiori a 50&nbsp;€
-    </div>
+    <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
 
     <!-- Header -->
     <header>
@@ -34,9 +31,10 @@
           <img src="logo.jpg" alt="Marielu Coffee Shop" />
         </a>
       </div>
+
       <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+        <ul>
+          <li><a href="index.html">Home</a></li>
           <li><a href="capsule.html" aria-current="page">Capsule</a></li>
           <li><a href="cialde.html">Cialde</a></li>
           <li><a href="grani.html">Grani</a></li>
@@ -44,18 +42,17 @@
           <li><a href="macchine.html">Macchine</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="contact.html">Contatti</a></li>
-      </ul>
-    </nav>
-
+        </ul>
+      </nav>
     </header>
 
     <!-- Hero -->
-    <section class="hero small-hero">
+    <section class="hero">
       <div class="hero-content">
         <h1>Capsule di Caffè</h1>
         <p>
-          Capsule originali e compatibili per tutte le macchine più diffuse.
-          Qualità da bar, comodità a casa tua.
+          Capsule originali e compatibili per le macchine più diffuse. Qualità da bar,
+          comodità a casa tua.
         </p>
       </div>
     </section>
@@ -70,37 +67,36 @@
           <img src="images/capsula.jpg" alt="Capsule compatibili" />
           <div class="info">
             <h4>Capsule Compatibili</h4>
-            <p>
-              Capsule compatibili con i principali sistemi. Gusto intenso e
-              cremoso.
-            </p>
+            <p>Capsule compatibili con i principali sistemi. Gusto intenso e cremoso.</p>
             <div class="price">Da € 12,90</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20sulle%20capsule%20compatibili"
-              target="_blank"
+              href="#"
               class="btn"
+              data-add
+              data-name="Capsule Compatibili"
+              data-price="Da € 12,90"
+              >Aggiungi</a
             >
-              Richiedi su WhatsApp
-            </a>
           </div>
         </div>
 
         <!-- Prodotto 2 -->
         <div class="product-card">
-          <img src="images/capsula2.jpg" alt="Capsule Nespresso" />
+          <img src="images/capsula2.jpg" alt="Capsule compatibili Nespresso" />
           <div class="info">
             <h4>Capsule Compatibili Nespresso</h4>
-            <p>
-              Miscela equilibrata, aroma persistente e crema vellutata.
-            </p>
+            <p>Miscela equilibrata, aroma persistente e crema vellutata.</p>
             <div class="price">Da € 13,50</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20sulle%20capsule%20Nespresso"
-              target="_blank"
+              href="#"
               class="btn"
+              data-add
+              data-name="Capsule Compatibili Nespresso"
+              data-price="Da € 13,50"
+              >Aggiungi</a
             >
-              Richiedi su WhatsApp
-            </a>
           </div>
         </div>
 
@@ -109,18 +105,37 @@
           <img src="images/borbone.jpg" alt="Capsule Borbone" />
           <div class="info">
             <h4>Capsule Borbone</h4>
-            <p>
-              Il gusto Borbone in capsule: forte, deciso e tipicamente italiano.
-            </p>
+            <p>Il gusto Borbone in capsule: forte, deciso e tipicamente italiano.</p>
             <div class="price">Da € 14,90</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20sulle%20capsule%20Borbone"
-              target="_blank"
+              href="#"
               class="btn"
+              data-add
+              data-name="Capsule Borbone"
+              data-price="Da € 14,90"
+              >Aggiungi</a
             >
-              Richiedi su WhatsApp
-            </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrello (ordine WhatsApp) -->
+    <section class="products">
+      <h2>Il tuo ordine</h2>
+
+      <div class="cart-box">
+        <div data-cart-list></div>
+
+        <div class="cart-actions">
+          <a
+            href="#"
+            class="btn btn-whatsapp"
+            onclick="sendToWhatsApp(); return false;"
+            >Invia ordine su WhatsApp</a
+          >
+          <a href="#" class="btn" onclick="clearCart(); return false;">Svuota</a>
         </div>
       </div>
     </section>
@@ -128,17 +143,13 @@
     <!-- CTA finale -->
     <section class="cta">
       <h2>Hai dubbi sulla compatibilità?</h2>
-      <p>
-        Scrivici su WhatsApp: ti aiutiamo a scegliere la capsula giusta per la
-        tua macchina.
-      </p>
+      <p>Scrivici su WhatsApp: ti aiutiamo a scegliere la capsula giusta per la tua macchina.</p>
       <a
-        href="https://wa.me/393000000000"
+        href="https://wa.me/393791395387"
         target="_blank"
         class="btn"
+        >Contattaci su WhatsApp</a
       >
-        Contattaci su WhatsApp
-      </a>
     </section>
 
     <!-- Footer -->
@@ -159,6 +170,8 @@
           <ul>
             <li><a href="capsule.html">Capsule</a></li>
             <li><a href="cialde.html">Cialde</a></li>
+            <li><a href="grani.html">Grani</a></li>
+            <li><a href="macchine.html">Macchine</a></li>
             <li><a href="accessori.html">Accessori</a></li>
           </ul>
         </div>
@@ -171,29 +184,17 @@
               target="_blank"
               ><i class="fab fa-facebook-f"></i
             ></a>
-            <a
-              href="https://www.instagram.com/marielucoffeeshop/"
-              target="_blank"
+            <a href="https://www.instagram.com/marielucoffeeshop/" target="_blank"
               ><i class="fab fa-instagram"></i
             ></a>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        © 2025 Marielu Coffee Shop – Tutti i diritti riservati.
-      </div>
+      <div class="footer-bottom">© 2025 Marielu Coffee Shop – Tutti i diritti riservati.</div>
     </footer>
+
+    <!-- Script (POSIZIONE CORRETTA) -->
+    <script src="cart.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
