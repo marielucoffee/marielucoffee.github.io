@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrello – Marielu Coffee Shop</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
+
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.jpg" alt="Marielu Coffee Shop" />
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="capsule.html">Capsule</a></li>
+          <li><a href="cialde.html">Cialde</a></li>
+          <li><a href="grani.html">Grani</a></li>
+          <li><a href="accessori.html">Accessori</a></li>
+          <li><a href="macchine.html">Macchine</a></li>
+          <li><a href="carrello.html" aria-current="page">Carrello (<span data-cart-badge>0</span>)</a></li>
+          <li><a href="contact.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="products">
+      <h2>Il tuo carrello</h2>
+      <p style="text-align:center;color:#666;margin-top:-10px">
+        Totale articoli: <strong data-cart-summary>0 articoli</strong>
+      </p>
+
+      <div class="cart-box">
+        <div data-cart-page-list></div>
+
+        <div class="cart-actions">
+          <a href="#" class="btn btn-whatsapp" onclick="sendToWhatsApp(); return false;">
+            Invia ordine su WhatsApp
+          </a>
+          <a href="#" class="btn" onclick="clearCart(); return false;">
+            Svuota
+          </a>
+        </div>
+
+        <p style="text-align:center;color:#777;margin:14px 0 0;font-size:0.9rem">
+          Dopo l’invio su WhatsApp confermeremo disponibilità e prezzo finale.
+        </p>
+      </div>
+    </section>
+
+    <script src="cart.js"></script>
+  </body>
+</html>
