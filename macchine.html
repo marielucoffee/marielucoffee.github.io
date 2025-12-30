@@ -17,7 +17,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <script src="cart.js"></script>
 
   <body>
     <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
@@ -28,23 +27,25 @@
           <img src="logo.jpg" alt="Marielu Coffee Shop" />
         </a>
       </div>
+
       <nav>
         <ul>
-         <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="capsule.html">Capsule</a></li>
           <li><a href="cialde.html">Cialde</a></li>
           <li><a href="grani.html">Grani</a></li>
           <li><a href="accessori.html">Accessori</a></li>
           <li><a href="macchine.html" aria-current="page">Macchine</a></li>
-           <li><a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a></li>
+          <li>
+            <a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a>
+          </li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="contact.html">Contatti</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero small-hero">
+    <section class="hero">
       <div class="hero-content">
         <h1>Macchine del Caffè</h1>
         <p>
@@ -54,81 +55,80 @@
       </div>
     </section>
 
-    <!-- Macchine -->
     <section class="products">
       <h2>Tipologie disponibili</h2>
 
       <div class="product-grid">
-        <!-- Capsule -->
         <div class="product-card">
           <img src="images/macchina_capsule.jpg" alt="Macchine a capsule" />
           <div class="info">
             <h4>Macchine a Capsule</h4>
             <p>
-              Pratiche e veloci, compatibili con capsule originali e
-              compatibili.
+              Pratiche e veloci, compatibili con capsule originali e compatibili.
             </p>
             <div class="price">Chiedi disponibilità</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20su%20una%20macchina%20a%20capsule"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Macchina a Capsule"
+              data-price="Chiedi disponibilità"
+              >Aggiungi</a
             >
           </div>
         </div>
 
-        <!-- Cialde -->
         <div class="product-card">
-          <img src="images/macchina_cialde.jpg" alt="Macchine a cialde" />
+          <img src="images/macchina_cialde.jpg" alt="Macchine a cialde ESE 44" />
           <div class="info">
             <h4>Macchine a Cialde ESE 44</h4>
-            <p>
-              Soluzione ecologica, semplice e con un espresso di qualità.
-            </p>
+            <p>Soluzione ecologica, semplice e con un espresso di qualità.</p>
             <div class="price">Chiedi disponibilità</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20su%20una%20macchina%20a%20cialde%20ESE%2044"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Macchina a Cialde ESE 44"
+              data-price="Chiedi disponibilità"
+              >Aggiungi</a
             >
           </div>
         </div>
 
-        <!-- Automatiche -->
         <div class="product-card">
-          <img src="images/macchina_grani.jpg" alt="Macchine automatiche" />
+          <img src="images/macchina_grani.jpg" alt="Macchine automatiche per grani" />
           <div class="info">
             <h4>Macchine Automatiche (Grani)</h4>
             <p>
               Macinatura al momento, massimo aroma, ideali per veri appassionati.
             </p>
             <div class="price">Chiedi disponibilità</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20su%20una%20macchina%20automatica%20per%20caff%C3%A8%20in%20grani"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Macchina Automatica (Grani)"
+              data-price="Chiedi disponibilità"
+              >Aggiungi</a
             >
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta">
       <h2>Non sai quale macchina fa per te?</h2>
       <p>
-        Dimmi che caffè bevi, quanto spazio hai e il tuo budget: ti consigliamo
-        noi.
+        Dimmi che caffè bevi, quanto spazio hai e il tuo budget: ti consigliamo noi.
       </p>
-      <a href="https://wa.me/393000000000" target="_blank" class="btn"
+      <a href="https://wa.me/393791395387" target="_blank" class="btn"
         >Chiedi consiglio su WhatsApp</a
       >
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-container">
         <div class="footer-col">
@@ -147,8 +147,8 @@
             <li><a href="capsule.html">Capsule</a></li>
             <li><a href="cialde.html">Cialde</a></li>
             <li><a href="grani.html">Grani</a></li>
-            <li><a href="accessori.html">Accessori</a></li>
             <li><a href="macchine.html">Macchine</a></li>
+            <li><a href="accessori.html">Accessori</a></li>
           </ul>
         </div>
 
@@ -173,10 +173,8 @@
         © 2025 Marielu Coffee Shop – Tutti i diritti riservati.
       </div>
     </footer>
+
+    <!-- Script (posizione corretta) -->
+    <script src="cart.js"></script>
   </body>
 </html>
-
-
-
-
-
