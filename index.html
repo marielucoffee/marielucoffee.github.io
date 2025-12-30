@@ -3,32 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marielu Coffee Shop - Capsule, Cialde Caffè in Grani e Accessori</title>
+    <title>Marielu Coffee Shop - Capsule, Cialde, Grani, Macchine e Accessori</title>
+
     <link rel="stylesheet" href="style.css" />
+
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <body>
-    <!-- Barra promozionale -->
-    <div class="top-bar">
-      Spedizione gratuita per ordini superiori a 50&nbsp;€
-    </div>
 
-    <!-- Intestazione con logo e navigazione -->
+  <body>
+    <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
+
     <header>
       <div class="logo">
         <a href="index.html">
-        <img src="logo.jpg" alt="Marielu Coffee Shop" />
+          <img src="logo.jpg" alt="Marielu Coffee Shop" />
         </a>
       </div>
+
       <nav>
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -37,7 +38,9 @@
           <li><a href="grani.html">Grani</a></li>
           <li><a href="accessori.html">Accessori</a></li>
           <li><a href="macchine.html">Macchine</a></li>
-           <li><a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a></li>
+          <li>
+            <a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a>
+          </li>
           <li><a href="contact.html">Contatti</a></li>
         </ul>
       </nav>
@@ -47,115 +50,143 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Il gusto del caffè a casa tua</h1>
-        <p>Marielù Coffee Shop: capsule, cialde, caffè in grani e accessori per un espresso perfetto.</p>
-        <a href="shop.html" class="btn">Scopri i nostri prodotti</a>
+        <p>
+          Marielù Coffee Shop: capsule, cialde, caffè in grani, macchine e accessori
+          per un espresso perfetto.
+        </p>
+        <a href="#categorie" class="btn">Scopri i nostri prodotti</a>
       </div>
     </section>
 
-    <!-- Sezione Chi siamo -->
+    <!-- Chi siamo -->
     <section class="about">
       <div class="about-img">
-        <img src="images/vetrina.jpg" alt="Caffè in tazzina" />
+        <img src="images/vetrina.jpg" alt="Vetrina Marielu Coffee Shop" />
       </div>
       <div class="about-content">
         <h2>Chi siamo</h2>
         <p>
           Marielu Coffee Shop è la tua rivendita di fiducia a Ghedi (BS) con una
-          vasta gamma di capsule originali e compatibili, cialde e macchine per
-          il caffè. Selezioniamo i migliori marchi per offrirti un caffè dal
-          gusto unico, come al bar.
+          vasta gamma di capsule originali e compatibili, cialde, caffè in grani,
+          macchine e accessori. Selezioniamo i migliori marchi per offrirti un
+          caffè dal gusto unico, come al bar.
         </p>
         <p>
-          Vieni a trovarci in negozio oppure ordina comodamente online: il
-          nostro obiettivo è portare a casa tua la qualità e l’aroma del vero
-          espresso italiano.
+          Vieni a trovarci in negozio oppure ordina comodamente: aggiungi i prodotti
+          al carrello e inviaci l’ordine su WhatsApp.
         </p>
         <a href="contact.html" class="btn">Contattaci</a>
       </div>
     </section>
+
     <!-- Categorie principali -->
-   <section class="categories">
+    <section class="categories" id="categorie">
       <h2>Le nostre categorie</h2>
+
       <div class="category-grid">
         <div class="category">
           <img src="images/capsule.jpg" alt="Capsule" />
           <h3>Capsule</h3>
           <a href="capsule.html" class="btn">Scopri</a>
         </div>
+
         <div class="category">
           <img src="images/cialde.jpg" alt="Cialde" />
           <h3>Cialde</h3>
           <a href="cialde.html" class="btn">Scopri</a>
         </div>
+
         <div class="category">
           <img src="images/grani2.jpg" alt="Grani" />
           <h3>Grani</h3>
           <a href="grani.html" class="btn">Scopri</a>
         </div>
+
         <div class="category">
           <img src="images/macchine.jpg" alt="Macchine da caffè" />
-          <h3>Macchine da Caffè</h3>
+          <h3>Macchine</h3>
           <a href="macchine.html" class="btn">Scopri</a>
-          </div>
+        </div>
+
         <div class="category">
           <img src="images/decalcificante.jpg" alt="Accessori" />
           <h3>Accessori</h3>
-          <a href="shop.html#accessori" class="btn">Scopri</a>
+          <a href="accessori.html" class="btn">Scopri</a>
         </div>
       </div>
     </section>
-  
-
-    
 
     <!-- Prodotti in evidenza -->
     <section class="products">
       <h2>Prodotti in evidenza</h2>
+
       <div class="product-grid">
         <div class="product-card">
-          <img src="images/capsula.jpg" alt="Capsule Nespresso" />
+          <img src="images/capsula.jpg" alt="Capsule Nespresso compatibili" />
           <div class="info">
-            <h4>Capsule Nespresso Compatibili</h4>
+            <h4>Capsule Compatibili Nespresso</h4>
             <p>Confezione da 50 capsule compatibili con sistema Nespresso.</p>
-            <div class="price">€&nbsp;12,90</div>
-            <a href="#" class="btn">Aggiungi al carrello</a>
+            <div class="price">€ 12,90</div>
+            <a
+              href="#"
+              class="btn"
+              data-add
+              data-name="Capsule Compatibili Nespresso (50)"
+              data-price="€ 12,90"
+              >Aggiungi</a
+            >
           </div>
         </div>
+
         <div class="product-card">
           <img src="images/grani.jpg" alt="Caffè in chicchi" />
           <div class="info">
             <h4>Caffè in Chicchi</h4>
-            <p>Miscela premium di chicchi 100% Arabica dal gusto intenso.</p>
-            <div class="price">€&nbsp;9,50</div>
-            <a href="#" class="btn">Aggiungi al carrello</a>
+            <p>Miscela premium di chicchi dal gusto intenso.</p>
+            <div class="price">€ 9,50</div>
+            <a
+              href="#"
+              class="btn"
+              data-add
+              data-name="Caffè in Chicchi"
+              data-price="€ 9,50"
+              >Aggiungi</a
+            >
           </div>
         </div>
+
         <div class="product-card">
           <img src="images/cialde.jpg" alt="Cialde" />
           <div class="info">
             <h4>Cialde</h4>
             <p>Confezione da 100 cialde per un espresso perfetto.</p>
-            <div class="price">€&nbsp;18,90</div>
-            <a href="#" class="btn">Aggiungi al carrello</a>
+            <div class="price">€ 18,90</div>
+            <a
+              href="#"
+              class="btn"
+              data-add
+              data-name="Cialde (100)"
+              data-price="€ 18,90"
+              >Aggiungi</a
+            >
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sezione call to action -->
+    <!-- CTA -->
     <section class="cta">
-      <h2>Sei pronto per gustare un caffè d'eccellenza?</h2>
+      <h2>Vuoi ordinare in 1 minuto?</h2>
       <p>
-        Visita il nostro shop online e scopri tutte le offerte speciali e le
-        promozioni dedicate ai veri amanti del caffè.
+        Aggiungi i prodotti al carrello e invia l’ordine su WhatsApp: ti rispondiamo
+        con conferma e disponibilità.
       </p>
-      <a href="shop.html" class="btn">Vai allo Shop</a>
+      <a href="carrello.html" class="btn">Vai al Carrello</a>
     </section>
 
     <!-- Footer -->
     <footer>
       <div class="footer-container">
-        <!-- Colonna negozio -->
         <div class="footer-col">
           <h3>Negozio</h3>
           <p>
@@ -163,7 +194,7 @@
             Via Cesare Battisti, 38<br />
             25016 Ghedi (BS) – Italia
           </p>
-          <p>Telefono: <a href="tel:+390305409159">030&nbsp;540&nbsp;9159</a></p>
+          <p>Telefono: <a href="tel:+390305409159">030 540 9159</a></p>
           <p>
             <a
               href="https://www.google.com/maps/search/?api=1&query=Via+Cesare+Battisti+38+25016+Ghedi+BS"
@@ -172,19 +203,18 @@
             >
           </p>
         </div>
-        <!-- Colonna categorie -->
+
         <div class="footer-col">
           <h3>Categorie</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html#capsule">Capsule</a></li>
-            <li><a href="shop.html#cialde">Cialde</a></li>
-            <li><a href="shop.html#accessori">Accessori</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contatti</a></li>
+            <li><a href="capsule.html">Capsule</a></li>
+            <li><a href="cialde.html">Cialde</a></li>
+            <li><a href="grani.html">Grani</a></li>
+            <li><a href="macchine.html">Macchine</a></li>
+            <li><a href="accessori.html">Accessori</a></li>
           </ul>
         </div>
-        <!-- Colonna info -->
+
         <div class="footer-col">
           <h3>Informazioni</h3>
           <ul>
@@ -194,7 +224,7 @@
             <li><a href="#">FAQ</a></li>
           </ul>
         </div>
-        <!-- Colonna social -->
+
         <div class="footer-col">
           <h3>Seguici</h3>
           <div class="social-icons">
@@ -211,9 +241,13 @@
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         © 2025 Marielu Coffee Shop - Tutti i diritti riservati.
       </div>
     </footer>
+
+    <!-- Script (badge + aggiungi) -->
+    <script src="cart.js"></script>
   </body>
 </html>
