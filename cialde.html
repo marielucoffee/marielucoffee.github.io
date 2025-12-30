@@ -17,7 +17,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <script src="cart.js"></script>
 
   <body>
     <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
@@ -28,6 +27,7 @@
           <img src="logo.jpg" alt="Marielu Coffee Shop" />
         </a>
       </div>
+
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -36,14 +36,16 @@
           <li><a href="grani.html">Grani</a></li>
           <li><a href="accessori.html">Accessori</a></li>
           <li><a href="macchine.html">Macchine</a></li>
-           <li><a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a></li>
+          <li>
+            <a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a>
+          </li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="contact.html">Contatti</a></li>
         </ul>
       </nav>
     </header>
 
-    <section class="hero small-hero">
+    <section class="hero">
       <div class="hero-content">
         <h1>Cialde di Caffè</h1>
         <p>
@@ -58,31 +60,37 @@
 
       <div class="product-grid">
         <div class="product-card">
-          <img src="images/cialde.jpg" alt="Cialde ESE 44" />
+          <img src="images/cialde.jpg" alt="Cialde ESE 44 Classiche" />
           <div class="info">
             <h4>Cialde ESE 44 – Classiche</h4>
             <p>Formato ESE 44, ottimo equilibrio tra aroma e cremosità.</p>
             <div class="price">Da € 18,90</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20sulle%20cialde%20ESE%2044%20classiche"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Cialde ESE 44 – Classiche"
+              data-price="Da € 18,90"
+              >Aggiungi</a
             >
           </div>
         </div>
 
         <div class="product-card">
-          <img src="images/cialde2.jpg" alt="Cialde Intenso" />
+          <img src="images/cialde2.jpg" alt="Cialde ESE 44 Intenso" />
           <div class="info">
             <h4>Cialde ESE 44 – Intenso</h4>
             <p>Gusto più deciso e persistente, perfetto per chi ama il forte.</p>
             <div class="price">Da € 19,90</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20sulle%20cialde%20ESE%2044%20intenso"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Cialde ESE 44 – Intenso"
+              data-price="Da € 19,90"
+              >Aggiungi</a
             >
           </div>
         </div>
@@ -93,11 +101,14 @@
             <h4>Cialde Borbone</h4>
             <p>Per chi vuole un espresso “da bar” anche in cialda.</p>
             <div class="price">Da € 20,90</div>
+
             <a
-              href="https://wa.me/393000000000?text=Salve,%20vorrei%20informazioni%20sulle%20cialde%20Borbone"
-              target="_blank"
+              href="#"
               class="btn"
-              >Richiedi su WhatsApp</a
+              data-add
+              data-name="Cialde Borbone"
+              data-price="Da € 20,90"
+              >Aggiungi</a
             >
           </div>
         </div>
@@ -107,7 +118,7 @@
     <section class="cta">
       <h2>Non sai se la tua macchina usa ESE 44?</h2>
       <p>Scrivici su WhatsApp: ti diciamo subito quali cialde vanno bene.</p>
-      <a href="https://wa.me/393000000000" target="_blank" class="btn"
+      <a href="https://wa.me/393791395387" target="_blank" class="btn"
         >Contattaci su WhatsApp</a
       >
     </section>
@@ -130,6 +141,7 @@
             <li><a href="capsule.html">Capsule</a></li>
             <li><a href="cialde.html">Cialde</a></li>
             <li><a href="grani.html">Grani</a></li>
+            <li><a href="macchine.html">Macchine</a></li>
             <li><a href="accessori.html">Accessori</a></li>
           </ul>
         </div>
@@ -155,10 +167,8 @@
         © 2025 Marielu Coffee Shop – Tutti i diritti riservati.
       </div>
     </footer>
+
+    <!-- Script (posizione corretta) -->
+    <script src="cart.js"></script>
   </body>
 </html>
-
-
-
-
-
