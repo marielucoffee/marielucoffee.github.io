@@ -1,18 +1,10 @@
 /*
  * Stile principale per il sito Marielu Coffee Shop.
- * La palette di colori si ispira al logo rosso del negozio abbinata
- * a tonalità neutre per mettere in risalto i contenuti. Il layout è
- * completamente responsivo: le sezioni si adattano su dispositivi
- * mobili disponendosi verticalmente e ridimensionando i caratteri
- * quando necessario. Le classi sono raggruppate per tipologia
- * (barra in alto, header, hero, sezioni, carte prodotto, footer) per
- * una migliore manutenzione del codice.
+ * Pulito (no duplicati) + supporto dropdown Capsule e carrello.
  */
 
-/* Reset di base */
-* {
-  box-sizing: border-box;
-}
+/* ===== Reset / base ===== */
+* { box-sizing: border-box; }
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -23,7 +15,7 @@ body {
   color: #333;
 }
 
-/* Barra superiore con messaggi promozionali */
+/* ===== Top bar ===== */
 .top-bar {
   background-color: #f7f7f7;
   color: #666;
@@ -32,7 +24,7 @@ body {
   text-align: center;
 }
 
-/* Header principale */
+/* ===== Header / nav ===== */
 header {
   display: flex;
   justify-content: space-between;
@@ -45,9 +37,7 @@ header {
   z-index: 1000;
 }
 
-header .logo img {
-  height: 60px;
-}
+header .logo img { height: 60px; }
 
 nav ul {
   list-style: none;
@@ -55,6 +45,7 @@ nav ul {
   gap: 25px;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 nav a {
@@ -64,21 +55,78 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #e31f24;
-}
+nav a:hover { color: #e31f24; }
+
 nav a[aria-current="page"] {
   color: #e31f24;
   font-weight: 700;
 }
 
+/* ===== Dropdown (Capsule -> sistemi) ===== */
+.has-dropdown { position: relative; }
 
-/* Sezione hero con immagine di sfondo */
+.has-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.has-dropdown > a i {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 240px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+
+.dropdown li a:hover {
+  background: rgba(227,31,36,0.08);
+  color: #e31f24;
+}
+
+/* Desktop hover */
+@media (min-width: 769px) {
+  .has-dropdown:hover .dropdown { display: block; }
+}
+
+/* Mobile: apri/chiudi via classe .open (gestita da JS) */
+.has-dropdown.open .dropdown { display: block; }
+
+@media (max-width: 768px) {
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* ===== Hero ===== */
 .hero {
   position: relative;
-  /* L'immagine di sfondo dell'hero è una illustrazione astratta di chicchi
-   * di caffè generata dall'IA. Il file hero.png si trova nella cartella
-   * images e sostituisce la precedente foto non valida. */
   background-image: url('images/hero.png');
   background-size: cover;
   background-position: center;
@@ -91,10 +139,7 @@ nav a[aria-current="page"] {
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -117,7 +162,7 @@ nav a[aria-current="page"] {
   margin-bottom: 30px;
 }
 
-/* Bottoni generici */
+/* ===== Buttons ===== */
 .btn {
   display: inline-block;
   padding: 12px 30px;
@@ -129,11 +174,9 @@ nav a[aria-current="page"] {
   transition: background 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #c81a1e;
-}
+.btn:hover { background-color: #c81a1e; }
 
-/* Sezione categorie */
+/* ===== Categories ===== */
 .categories {
   padding: 60px 20px;
   text-align: center;
@@ -161,9 +204,7 @@ nav a[aria-current="page"] {
   transition: transform 0.3s ease;
 }
 
-.category:hover {
-  transform: translateY(-5px);
-}
+.category:hover { transform: translateY(-5px); }
 
 .category img {
   width: 100%;
@@ -177,11 +218,7 @@ nav a[aria-current="page"] {
   font-weight: 600;
 }
 
-.category a {
-  margin-bottom: 20px;
-}
-
-/* Sezione About */
+/* ===== About ===== */
 .about {
   padding: 60px 20px;
   display: flex;
@@ -190,10 +227,7 @@ nav a[aria-current="page"] {
   gap: 50px;
 }
 
-.about-img {
-  flex: 1;
-  min-width: 300px;
-}
+.about-img { flex: 1; min-width: 300px; }
 
 .about-img img {
   width: 100%;
@@ -201,10 +235,7 @@ nav a[aria-current="page"] {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about-content {
-  flex: 1;
-  min-width: 300px;
-}
+.about-content { flex: 1; min-width: 300px; }
 
 .about-content h2 {
   font-size: 2.5rem;
@@ -218,7 +249,7 @@ nav a[aria-current="page"] {
   color: #555;
 }
 
-/* Sezione prodotti */
+/* ===== Products ===== */
 .products {
   padding: 60px 20px;
   background-color: #f7f7f7;
@@ -252,9 +283,7 @@ nav a[aria-current="page"] {
   object-fit: cover;
 }
 
-.product-card .info {
-  padding: 15px;
-}
+.product-card .info { padding: 15px; }
 
 .product-card h4 {
   font-size: 1.3rem;
@@ -283,7 +312,7 @@ nav a[aria-current="page"] {
   font-size: 0.9rem;
 }
 
-/* Sezione call to action */
+/* ===== CTA ===== */
 .cta {
   padding: 60px 20px;
   background-color: #e31f24;
@@ -303,7 +332,7 @@ nav a[aria-current="page"] {
   color: #fdfdfd;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   background-color: #333;
   color: #ddd;
@@ -333,9 +362,7 @@ footer {
   padding: 0;
 }
 
-.footer-col ul li {
-  margin-bottom: 10px;
-}
+.footer-col ul li { margin-bottom: 10px; }
 
 .footer-col ul a {
   color: #ddd;
@@ -344,11 +371,9 @@ footer {
   transition: color 0.3s ease;
 }
 
-.footer-col ul a:hover {
-  color: #fff;
-}
+.footer-col ul a:hover { color: #fff; }
 
-/* Mantiene lo stile del testo nei paragrafi del footer anche per i link (telefono, mappa) */
+/* Link nei paragrafi del footer (telefono, maps) */
 .footer-col p a {
   color: inherit;
   text-decoration: underline;
@@ -366,9 +391,7 @@ footer {
   transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #e31f24;
-}
+.social-icons a:hover { color: #e31f24; }
 
 .footer-bottom {
   text-align: center;
@@ -377,7 +400,7 @@ footer {
   color: #aaa;
 }
 
-/* Contact page specific styles */
+/* ===== Contact ===== */
 .contact-container {
   padding: 60px 20px;
   display: flex;
@@ -385,10 +408,7 @@ footer {
   gap: 50px;
 }
 
-.contact-details {
-  flex: 1;
-  min-width: 300px;
-}
+.contact-details { flex: 1; min-width: 300px; }
 
 .contact-details h2 {
   font-size: 2rem;
@@ -401,10 +421,7 @@ footer {
   color: #555;
 }
 
-.contact-form {
-  flex: 1;
-  min-width: 300px;
-}
+.contact-form { flex: 1; min-width: 300px; }
 
 .contact-form form {
   display: flex;
@@ -439,61 +456,9 @@ footer {
   transition: background 0.3s ease;
 }
 
-.contact-form button:hover {
-  background-color: #c81a1e;
-}
+.contact-form button:hover { background-color: #c81a1e; }
 
-/* Media queries per dispositivi mobili */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-  .hero {
-    height: 50vh;
-  }
-  .category {
-    width: 80%;
-  }
-  .about {
-    flex-direction: column;
-  }
-  .product-card {
-    width: 80%;
-  }
-  .footer-container {
-    flex-direction: column;
-  }
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  nav ul {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-}
-/* Mini carrello + toast */
-.cart-box { background:#fff; border:1px solid #eee; border-radius:10px; padding:16px; max-width:520px; margin:20px auto; }
-.cart-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px dashed #eee; }
-.cart-row:last-child { border-bottom:none; }
-.cart-row__price { color:#888; font-size:0.9rem; margin-left:6px; }
-.cart-row__qty { display:flex; align-items:center; gap:10px; }
-.cart-mini-btn { width:28px; height:28px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer; font-weight:700; }
-.cart-actions { display:flex; gap:12px; justify-content:center; margin-top:14px; flex-wrap:wrap; }
-.btn-whatsapp { background:#25D366; }
-.btn-whatsapp:hover { background:#1ebe5a; }
-
-.toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
-  background:#111; color:#fff; padding:10px 14px; border-radius:10px; opacity:0; transition:.25s; z-index:9999; }
-.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
-/* Evidenzia pagina attiva nel menu */
-nav a[aria-current="page"] {
-  color: #e31f24;
-  font-weight: 700;
-}
-
-/* Mini carrello + toast */
+/* ===== Carrello + toast ===== */
 .cart-box {
   background: #fff;
   border: 1px solid #eee;
@@ -511,9 +476,7 @@ nav a[aria-current="page"] {
   border-bottom: 1px dashed #eee;
 }
 
-.cart-row:last-child {
-  border-bottom: none;
-}
+.cart-row:last-child { border-bottom: none; }
 
 .cart-row__price {
   color: #888;
@@ -545,13 +508,8 @@ nav a[aria-current="page"] {
   flex-wrap: wrap;
 }
 
-.btn-whatsapp {
-  background: #25d366;
-}
-
-.btn-whatsapp:hover {
-  background: #1ebe5a;
-}
+.btn-whatsapp { background: #25d366; }
+.btn-whatsapp:hover { background: #1ebe5a; }
 
 .toast {
   position: fixed;
@@ -571,7 +529,8 @@ nav a[aria-current="page"] {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
-/* --- System selector (capsule) --- */
+
+/* ===== System selector (se lo tieni) ===== */
 .system-selector {
   padding: 28px 20px 10px;
   background: #fff;
@@ -625,8 +584,25 @@ nav a[aria-current="page"] {
   flex: 0 0 auto;
 }
 
-/* Mobile: chips in riga scrollabile, pulita */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero { height: 50vh; }
+  .category { width: 80%; }
+  .about { flex-direction: column; }
+  .product-card { width: 80%; }
+  .footer-container { flex-direction: column; }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* Se tieni i chips: su mobile scorrono orizzontalmente */
   .system-chips {
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -635,9 +611,5 @@ nav a[aria-current="page"] {
     padding-bottom: 12px;
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
-
-  .system-chip {
-    white-space: nowrap;
-  }
+  .system-chip { white-space: nowrap; }
 }
-
