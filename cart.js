@@ -149,3 +149,13 @@ document.addEventListener("DOMContentLoaded", () => {
   updateBadges();
   renderCartPage();
 });
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("nav li.has-dropdown .dropdown a");
+  if (!link) return;
+
+  const li = link.closest("li.has-dropdown");
+  if (!li) return;
+
+  li.classList.remove("open");
+});
+
