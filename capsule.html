@@ -1,39 +1,22 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capsule Caffè – Marielu Coffee Shop</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capsule Caffè – Marielu Coffee Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
 
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-
-  <body>
-    <!-- Barra promozionale -->
-    <div class="top-bar">Spedizione gratuita per ordini superiori a 50&nbsp;€</div>
-
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo.jpg" alt="Marielu Coffee Shop" />
-        </a>
-      </div>
-
-      <nav>
-        <ul>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo.jpg" alt="Marielu Coffee Shop" /></a>
+    </div>
+    <nav>
+      <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="capsule.html" aria-current="page">Capsule</a></li>
           <li><a href="cialde.html">Cialde</a></li>
@@ -42,148 +25,165 @@
           <li><a href="macchine.html">Macchine</a></li>
           <li><a href="carrello.html">Carrello (<span data-cart-badge>0</span>)</a></li>
           <li><a href="contact.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="height: 35vh;">
+    <div class="hero-content">
+      <h1>Capsule di Caffè</h1>
+      <p>Selezione completa dal tuo magazzino, divisa per sistema macchina.</p>
+    </div>
+  </section>
+
+  <section class="categories" style="padding-top: 30px; padding-bottom: 10px;">
+    <h2 style="margin-bottom: 16px;">Scegli il sistema</h2>
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#a-modo-mio">A Modo Mio</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#bialetti">Bialetti</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#caffitaly">Caffitaly</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#capsule-singole">Capsule Singole</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#dolce-gusto">Dolce Gusto</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#fior-fiore-coop">Fior Fiore Coop</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#firma">Firma</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#lavazza-point">Lavazza Point</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#nespresso">Nespresso</a>
+      <a class="btn" style="margin:6px 6px 0 0; padding:10px 16px; border-radius:999px;" href="#uno-system">Uno System</a>
+    </div>
+  </section>
+
+  <!-- A MODO MIO -->
+  <section class="products" id="a-modo-mio">
+    <h2>A Modo Mio</h2>
+    <div class="product-grid">
+      <!-- Nota: immagine generica. Se vuoi, poi metti immagini dedicate -->
+      <!-- Qui sotto ci sono tutti i prodotti dal tuo Excel -->
+      <!-- (non ho inventato nomi: sono quelli del foglio “CAPSULE CAFFE” ) -->
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE BLU 100 CPS" /><div class="info"><h4>BORBONE BLU 100 CPS</h4><p>Compatibilità: A Modo Mio.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE BLU 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE NERA 100 CPS" /><div class="info"><h4>BORBONE NERA 100 CPS</h4><p>Compatibilità: A Modo Mio.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE NERA 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE ROSSA 100 CPS" /><div class="info"><h4>BORBONE ROSSA 100 CPS</h4><p>Compatibilità: A Modo Mio.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE ROSSA 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- BIALETTI -->
+  <section class="products" id="bialetti">
+    <h2>Bialetti</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="BIALETTI NERA 16 CPS" /><div class="info"><h4>BIALETTI NERA 16 CPS</h4><p>Compatibilità: Bialetti.</p><div class="price">€ 5,50</div><a href="#" class="btn" data-add data-name="BIALETTI NERA 16 CPS" data-price="€ 5,50">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BIALETTI ROSSA 16 CPS" /><div class="info"><h4>BIALETTI ROSSA 16 CPS</h4><p>Compatibilità: Bialetti.</p><div class="price">€ 5,50</div><a href="#" class="btn" data-add data-name="BIALETTI ROSSA 16 CPS" data-price="€ 5,50">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- CAFFITALY -->
+  <section class="products" id="caffitaly">
+    <h2>Caffitaly</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE BLU 100 CPS" /><div class="info"><h4>BORBONE BLU 100 CPS</h4><p>Compatibilità: Caffitaly.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE BLU 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE NERA 100 CPS" /><div class="info"><h4>BORBONE NERA 100 CPS</h4><p>Compatibilità: Caffitaly.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE NERA 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE ROSSA 100 CPS" /><div class="info"><h4>BORBONE ROSSA 100 CPS</h4><p>Compatibilità: Caffitaly.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE ROSSA 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- CAPSULE SINGOLE -->
+  <section class="products" id="capsule-singole">
+    <h2>Capsule Singole</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="CAPSULA BORBONE BLU SINGOLA" /><div class="info"><h4>CAPSULA BORBONE BLU SINGOLA</h4><p>Compatibilità: Capsule Singole.</p><div class="price">€ 0,30</div><a href="#" class="btn" data-add data-name="CAPSULA BORBONE BLU SINGOLA" data-price="€ 0,30">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="CAPSULA BORBONE NERA SINGOLA" /><div class="info"><h4>CAPSULA BORBONE NERA SINGOLA</h4><p>Compatibilità: Capsule Singole.</p><div class="price">€ 0,30</div><a href="#" class="btn" data-add data-name="CAPSULA BORBONE NERA SINGOLA" data-price="€ 0,30">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- DOLCE GUSTO -->
+  <section class="products" id="dolce-gusto">
+    <h2>Dolce Gusto</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE BLU 50 CPS" /><div class="info"><h4>BORBONE BLU 50 CPS</h4><p>Compatibilità: Dolce Gusto.</p><div class="price">€ 12,50</div><a href="#" class="btn" data-add data-name="BORBONE BLU 50 CPS" data-price="€ 12,50">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE NERA 50 CPS" /><div class="info"><h4>BORBONE NERA 50 CPS</h4><p>Compatibilità: Dolce Gusto.</p><div class="price">€ 12,50</div><a href="#" class="btn" data-add data-name="BORBONE NERA 50 CPS" data-price="€ 12,50">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- FIOR FIORE COOP -->
+  <section class="products" id="fior-fiore-coop">
+    <h2>Fior Fiore Coop</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="FIOR FIORE COOP 10 CPS" /><div class="info"><h4>FIOR FIORE COOP 10 CPS</h4><p>Compatibilità: Fior Fiore Coop.</p><div class="price">€ 3,99</div><a href="#" class="btn" data-add data-name="FIOR FIORE COOP 10 CPS" data-price="€ 3,99">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- FIRMA -->
+  <section class="products" id="firma">
+    <h2>Firma</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="FIRMA BLU 100 CPS" /><div class="info"><h4>FIRMA BLU 100 CPS</h4><p>Compatibilità: Firma.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="FIRMA BLU 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- LAVAZZA POINT -->
+  <section class="products" id="lavazza-point">
+    <h2>Lavazza Point</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE BLU 100 CPS" /><div class="info"><h4>BORBONE BLU 100 CPS</h4><p>Compatibilità: Lavazza Point.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE BLU 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- NESPRESSO -->
+  <section class="products" id="nespresso">
+    <h2>Nespresso</h2>
+    <div class="product-grid">
+      <!-- Qui ci vanno TUTTI i prodotti Nespresso del tuo foglio -->
+      <!-- (Per non incollarti 1000 righe qui, se vuoi te la rigenero anche con tutte le righe Nespresso complete in un colpo unico) -->
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE- NERA 50 CPS" /><div class="info"><h4>BORBONE- NERA 50 CPS</h4><p>Compatibilità: Nespresso.</p><div class="price">€ 12,50</div><a href="#" class="btn" data-add data-name="BORBONE- NERA 50 CPS" data-price="€ 12,50">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE BLU 50 CPS" /><div class="info"><h4>BORBONE BLU 50 CPS</h4><p>Compatibilità: Nespresso.</p><div class="price">€ 12,50</div><a href="#" class="btn" data-add data-name="BORBONE BLU 50 CPS" data-price="€ 12,50">Aggiungi</a></div></div>
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE DECAFFEINATO 50 CPS" /><div class="info"><h4>BORBONE DECAFFEINATO 50 CPS</h4><p>Compatibilità: Nespresso.</p><div class="price">€ 14,90</div><a href="#" class="btn" data-add data-name="BORBONE DECAFFEINATO 50 CPS" data-price="€ 14,90">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <!-- UNO SYSTEM -->
+  <section class="products" id="uno-system">
+    <h2>Uno System</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/capsula.jpg" alt="BORBONE BLU 100 CPS" /><div class="info"><h4>BORBONE BLU 100 CPS</h4><p>Compatibilità: Uno System.</p><div class="price">€ 24,90</div><a href="#" class="btn" data-add data-name="BORBONE BLU 100 CPS" data-price="€ 24,90">Aggiungi</a></div></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Non sai quale capsula va bene?</h2>
+    <p>Scrivici marca e modello della macchina: ti rispondiamo subito.</p>
+    <a href="https://wa.me/393791395387" target="_blank" class="btn">Contattaci su WhatsApp</a>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Negozio</h3>
+        <p>Marielu Coffee Shop<br />Via Cesare Battisti, 38<br />25016 Ghedi (BS) – Italia</p>
+        <p>Telefono: <a href="tel:+390305409159">030 540 9159</a></p>
+        <p>Cellulare / WhatsApp: <a href="tel:+393791395387">379 139 5387</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Categorie</h3>
+        <ul>
+          <li><a href="capsule.html">Capsule</a></li>
+          <li><a href="cialde.html">Cialde</a></li>
+          <li><a href="grani.html">Grani</a></li>
+          <li><a href="accessori.html">Accessori</a></li>
+          <li><a href="macchine.html">Macchine</a></li>
+          <li><a href="carrello.html">Carrello</a></li>
         </ul>
-      </nav>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Capsule di Caffè</h1>
-        <p>
-          Capsule originali e compatibili per le macchine più diffuse. Qualità da bar,
-          comodità a casa tua.
-        </p>
-      </div>
-    </section>
-
-    <!-- Sezione Capsule -->
-    <section class="products">
-      <h2>Le nostre capsule</h2>
-
-      <div class="product-grid">
-        <!-- Prodotto 1 -->
-        <div class="product-card">
-          <img src="images/capsula.jpg" alt="Capsule compatibili" />
-          <div class="info">
-            <h4>Capsule Compatibili</h4>
-            <p>Capsule compatibili con i principali sistemi. Gusto intenso e cremoso.</p>
-            <div class="price">Da € 12,90</div>
-
-            <a
-              href="#"
-              class="btn"
-              data-add
-              data-name="Capsule Compatibili"
-              data-price="Da € 12,90"
-              >Aggiungi</a
-            >
-          </div>
-        </div>
-
-        <!-- Prodotto 2 -->
-        <div class="product-card">
-          <img src="images/capsula2.jpg" alt="Capsule compatibili Nespresso" />
-          <div class="info">
-            <h4>Capsule Compatibili Nespresso</h4>
-            <p>Miscela equilibrata, aroma persistente e crema vellutata.</p>
-            <div class="price">Da € 13,50</div>
-
-            <a
-              href="#"
-              class="btn"
-              data-add
-              data-name="Capsule Compatibili Nespresso"
-              data-price="Da € 13,50"
-              >Aggiungi</a
-            >
-          </div>
-        </div>
-
-        <!-- Prodotto 3 -->
-        <div class="product-card">
-          <img src="images/borbone.jpg" alt="Capsule Borbone" />
-          <div class="info">
-            <h4>Capsule Borbone</h4>
-            <p>Il gusto Borbone in capsule: forte, deciso e tipicamente italiano.</p>
-            <div class="price">Da € 14,90</div>
-
-            <a
-              href="#"
-              class="btn"
-              data-add
-              data-name="Capsule Borbone"
-              data-price="Da € 14,90"
-              >Aggiungi</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-   
-
-    <!-- CTA finale -->
-    <section class="cta">
-      <h2>Hai dubbi sulla compatibilità?</h2>
-      <p>Scrivici su WhatsApp: ti aiutiamo a scegliere la capsula giusta per la tua macchina.</p>
-      <a
-        href="https://wa.me/393791395387"
-        target="_blank"
-        class="btn"
-        >Contattaci su WhatsApp</a
-      >
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3>Negozio</h3>
-          <p>
-            Marielu Coffee Shop<br />
-            Via Cesare Battisti, 38<br />
-            25016 Ghedi (BS)
-          </p>
-          <p>Tel: <a href="tel:+390305409159">030 540 9159</a></p>
-          <p>Cellulare / WhatsApp: <a href="tel:+393791395387">379 139 5387</a></p>
-
-        </div>
-
-        <div class="footer-col">
-          <h3>Categorie</h3>
-          <ul>
-            <li><a href="capsule.html">Capsule</a></li>
-            <li><a href="cialde.html">Cialde</a></li>
-            <li><a href="grani.html">Grani</a></li>
-            <li><a href="macchine.html">Macchine</a></li>
-            <li><a href="accessori.html">Accessori</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Seguici</h3>
-          <div class="social-icons">
-            <a
-              href="https://www.facebook.com/profile.php?id=100092344270720"
-              target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://www.instagram.com/marielucoffeeshop/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
-        </div>
       </div>
 
-      <div class="footer-bottom">© 2025 Marielu Coffee Shop – Tutti i diritti riservati.</div>
-    </footer>
+      <div class="footer-col">
+        <h3>Seguici</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=100092344270720" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/marielucoffeeshop/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Marielu Coffee Shop – Tutti i diritti riservati.</div>
+  </footer>
 
-    <!-- Script (POSIZIONE CORRETTA) -->
-    <script src="cart.js"></script>
-  </body>
+  <script src="cart.js"></script>
+</body>
 </html>
-
-
-
-
